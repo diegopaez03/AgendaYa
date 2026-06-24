@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AgendaYA — TP4 Integración Continua
 
-## Getting Started
+Proyecto seed en **Next.js + TypeScript** para el Trabajo Práctico Nº 4 de Ingeniería y Calidad de Software.
 
-First, run the development server:
+## Contexto
+
+Caso de estudio **AgendaYA** (M05 — Gestión de Agenda y Reservas). Se implementó la lógica mínima necesaria para que pasen las pruebas unitarias derivadas de las historias de usuario trabajadas en los TP anteriores.
+
+## Historias de usuario cubiertas
+
+| Integrante | Historia | Archivo de tests |
+|---|---|---|
+| Integrante 1 | US_M05_005 — Cancelación base y liberación de cupo | `src/lib/__tests__/reserva.test.ts` |
+| Integrante 2 | US_M05_011 — Notificaciones por cancelación | `src/lib/__tests__/notificaciones.test.ts` |
+| Integrante 3 | US_M05_012 — Alerta de reembolso manual | `src/lib/__tests__/reembolso.test.ts` |
+
+Cada integrante aporta **3 pruebas unitarias** (9 en total).
+
+## Requisitos
+
+- Node.js 20+
+- npm
+
+## Instalación
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm test          # Ejecutar pruebas unitarias (Vitest)
+npm run test:watch
+npm run build     # Build de producción
+npm run dev       # Servidor de desarrollo
+npm run lint      # ESLint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Pipeline de CI
 
-## Learn More
+El workflow `.github/workflows/ci.yml` se ejecuta en:
 
-To learn more about Next.js, take a look at the following resources:
+- Creación o actualización de **Pull Requests** hacia `main`/`master`
+- **Push** a `main`/`master`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pasos del pipeline:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Checkout del código
+2. Configuración de Node.js 20
+3. `npm ci`
+4. `npm test`
+5. `npm run build`
 
-## Deploy on Vercel
+## Estructura relevante
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/lib/
+  types.ts
+  reserva.ts
+  notificaciones.ts
+  reembolso.ts
+  cancelacion.ts
+  __tests__/
+.github/workflows/ci.yml
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Publicación en GitHub
+
+1. Crear repositorio en GitHub.
+2. Vincular el remoto y subir el código:
+
+```bash
+git remote add origin https://github.com/<usuario>/<repo>.git
+git add .
+git commit -m "TP4: proyecto seed, tests unitarios y pipeline CI"
+git push -u origin main
+```
+
+3. Crear un Pull Request de prueba para verificar que el pipeline se dispara correctamente.
+
+## Informe
+
+Ver `INFORME-TP4.md` en la carpeta raíz del TP4 para la estructura del informe entregable.
