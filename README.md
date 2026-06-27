@@ -52,8 +52,8 @@ Pasos del pipeline:
 1. Checkout del código
 2. Configuración de Node.js 20
 3. `npm ci`
-4. `npm test`
-5. `npm run build`
+4. `npm run build`
+5. `npm test`
 
 ## Estructura relevante
 

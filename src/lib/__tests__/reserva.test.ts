@@ -32,7 +32,7 @@ describe("US_M05_005 — Cancelación Base y Liberación de Cupo", () => {
 
     expect(puedeCancelarReserva(reservaBase, referencia)).toBe(true);
 
-    const resultado = cancelarReserva(reservaBase, slotOcupado);
+    const resultado = cancelarReserva(reservaBase, slotOcupado, referencia);
 
     expect(resultado.reserva.estado).toBe("Cancelada");
     expect(resultado.slot.disponibilidad).toBe("Disponible");

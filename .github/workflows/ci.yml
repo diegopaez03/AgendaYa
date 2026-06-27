@@ -1,8 +1,6 @@
 name: CI AgendaYA
 
 on:
-  pull_request:
-    branches: [main, master]
   push:
     branches: [main, master]
 
@@ -18,13 +16,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: npm
+          cache: "npm"
 
       - name: Instalar dependencias
         run: npm ci
 
+      - name: Build del proyecto
+        run: npm run build --if-present
+
       - name: Ejecutar pruebas unitarias
         run: npm test
-
-      - name: Build del proyecto
-        run: npm run build

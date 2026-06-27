@@ -24,9 +24,10 @@ export function puedeCancelarReserva(
 
 export function cancelarReserva(
   reserva: Reserva,
-  slot: SlotHorario
+  slot: SlotHorario,
+  referencia = new Date()
 ): ResultadoCancelacion {
-  if (!puedeCancelarReserva(reserva)) {
+  if (!puedeCancelarReserva(reserva, referencia)) {
     throw new Error(
       "La reserva no puede cancelarse: estado inválido o fecha pasada."
     );
