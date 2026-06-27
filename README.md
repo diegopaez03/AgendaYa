@@ -11,11 +11,11 @@ Caso de estudio **AgendaYA** (M05 — Gestión de Agenda y Reservas). Se impleme
 | Integrante | Historia | Archivo de tests |
 |---|---|---|
 | Integrante 1 | US_M05_005 — Cancelación base y liberación de cupo | `src/lib/__tests__/reserva.test.ts` |
-| Integrante 1 | US_M05_011 — Notificaciones por cancelación | `src/lib/__tests__/notificaciones.test.ts` |
-| Integrante 1 | US_M05_012 — Alerta de reembolso manual | `src/lib/__tests__/reembolso.test.ts` |
-| Integrante 2 | US_M05_006 — Inicializacion de accesos rapidos | `src/lib/__tests__/accesosRapidos.test.ts` |
-| Integrante 2 | US_M05_007 — Registro de acciones | `src/lib/__tests__/accesosRapidos.test.ts` |
-| Integrante 2 | US_M05_008 — Ranking y ordenamiento | `src/lib/__tests__/accesosRapidos.test.ts` |
+| Integrante 2 | US_M05_011 — Notificaciones por cancelación | `src/lib/__tests__/notificaciones.test.ts` |
+| Integrante 3 | US_M05_012 — Alerta de reembolso manual | `src/lib/__tests__/reembolso.test.ts` |
+| Integrante 4 | US_M05_006 — Inicializacion de accesos rapidos | `src/lib/__tests__/accesosRapidos.test.ts` |
+| Integrante 5 | US_M05_007 — Registro de acciones | `src/lib/__tests__/accesosRapidos.test.ts` |
+| Integrante 5 | US_M05_008 — Ranking y ordenamiento | `src/lib/__tests__/accesosRapidos.test.ts` |
 
 Cada integrante aporta **3 pruebas unitarias**.
 
